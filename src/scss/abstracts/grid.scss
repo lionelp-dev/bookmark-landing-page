@@ -1,0 +1,48 @@
+@use "../utils" as *; 
+
+$grid-columns: 12;
+
+@include xs-min {
+  @for $i from 1 through $grid-columns {
+    .col-xs-#{$i} {
+      display: grid;
+      grid-template-columns: repeat($i, minmax(0,1fr));
+    }
+  }
+} 
+ 
+@include sm-min {
+  @for $i from 1 through $grid-columns {
+    .col-sm-#{$i} {
+      display: grid;
+      grid-template-columns: repeat($i, minmax(0,1fr));
+    }
+  }
+}
+ 
+@include md-min {
+  @for $i from 1 through $grid-columns {
+    .col-md-#{$i} {
+      display: grid;
+      grid-template-columns: repeat($i, minmax(0,1fr));
+    }
+  }
+}
+
+@include lg-min {
+  @for $i from 1 through $grid-columns {
+    .col-lg-#{$i} {
+      display: grid;
+      grid-template-columns: repeat($i, minmax(0,1fr));
+    }
+  }
+}
+
+@include xl-min {
+  @for $i from 1 through $grid-columns {
+    .col-xl-#{$i} {
+      display: grid;
+      grid-template-columns: repeat($i, minmax(0,1fr));
+    }
+  }
+}

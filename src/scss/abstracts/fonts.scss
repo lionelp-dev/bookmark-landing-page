@@ -1,0 +1,41 @@
+@use  "../utils" as *;
+@use "./colors" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+
+html {
+  font-family: "Rubik", sans-serif;
+  color:  $gravish-blue;
+}
+
+h1 {
+  padding-bottom: rem(27);
+  font-size: clamp(rem(21),rem(21) + 3vw,rem(39));
+  font-weight: 500;
+  letter-spacing: -0.018rem;
+  color:  $very-dark-blue;
+}
+
+h2 {
+  padding-bottom: rem(27);
+  font-size: clamp(rem(18),rem(18) + 3vw,rem(26));
+  letter-spacing: -0.018rem;
+  color:  $very-dark-blue;
+}
+h3{
+  padding-bottom: rem(21);
+  font-size: clamp(rem(21),rem(21) + 3vw,rem(29));
+  letter-spacing: -0.018rem;
+  color:  $very-dark-blue;
+}
+p {
+  font-size: clamp(rem(11),rem(11) + 3vw,rem(18));
+  line-height: rem(28);
+  padding-bottom: rem(38);
+}
+
+a{
+  font-size: clamp(rem(11),rem(11) + 3vw,rem(14));
+  color:  $very-dark-blue;
+}
+

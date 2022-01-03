@@ -1,6 +1,23 @@
-@import "mixins";
-@import "functions";
-@import "colors";
-@import "typography";
+@use "./layouts";
+@use "./components";
+@use "./pages";
 
-@import "global";
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,body{
+  position: relative;
+  min-height: 100%;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+

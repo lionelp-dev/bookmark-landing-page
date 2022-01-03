@@ -1,0 +1,14 @@
+$width: (
+  "xs": 20rem,
+  "sm": 23rem,
+  "md": 26rem,
+  "lg": 29rem,
+  "xl": 31rem,
+  "2xl":34rem,
+);
+
+@each $name, $size in $width { 
+    .max-w-#{$name}{
+        max-width: $size;
+    }
+}
