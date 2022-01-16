@@ -1,15 +1,14 @@
 @use "../abstracts" as *;
 @use "../utils" as *;
 
-.home_section_1 {
+$base-padding: calc(clamp(rem(30), 3vw, rem(45)));
+
+.home-section-1 {
   position: relative;
   justify-items: center;
-  padding: rem(39) 0;
-  @include lg-min {
-    padding: rem(65) 0;
-  }
+  padding: $base-padding 0;
   &__text {
-    padding-top: rem(45);
+    align-self: center;
     @include lg-max {
       grid-row: 2;
       text-align: center;
@@ -18,7 +17,7 @@
   &__cta {
     display: flex;
     flex-wrap: wrap;
-    gap: rem(15);
+    gap: 1.6vw;
     @include lg-max {
       justify-content: center;
       gap: rem(11);
@@ -26,40 +25,214 @@
   }
 
   &__illustration {
-    @include lg-max {
-      width: 113%;
-    }
-    width: 100%;
-
-    position: relative;
-    &__img {
-      width: 100vw;
-      @include lg-min {
-        width: 48vw;
+    img {
+      width: 47vw;
+      @include lg-max {
+        width: 100%;
+        transform: scale(1.1);
+        transform-origin: center;
       }
     }
-  }
-
-  &__background {
-    position: absolute;
-    display: flex;
-    right: 0;
-    z-index: -1;
-
-    top: clamp(rem(45), calc(rem(45) + 13vw), rem(350));
-    $base: clamp(rem(146), rem(146) + 16vw, rem(353));
-    .circle {
-      height: $base;
-      width: $base;
-      margin-right: calc((-1 * $base) / 2);
-      border-radius: 50%;
-      background-color: $soft-blue;
-    }
-    .rectangle {
-      height: $base;
-      width: $base;
-      background-color: $soft-blue;
+    .right_shape {
+      position: absolute;
+      display: flex;
+      z-index: -1;
+      right: 0;
+      top: calc(3rem + 13vw);
+      $base: 53vw;
+      .circle {
+        height: $base;
+        width: $base;
+        margin-right: calc((-1 * $base) / 2);
+        border-radius: 50%;
+        background-color: $soft-blue;
+      }
+      .rectangle {
+        height: $base;
+        width: $base;
+        background-color: $soft-blue;
+      }
+      @include lg-min {
+        top: 14vw;
+        $base: 25vw;
+        .circle {
+          height: $base;
+          width: $base;
+          margin-right: calc((-1 * $base) / 2);
+          border-radius: 50%;
+          background-color: $soft-blue;
+        }
+        .rectangle {
+          height: $base;
+          width: $base;
+          background-color: $soft-blue;
+        }
+      }
     }
   }
 }
 
+.home_section_2 {
+  position: relative;
+  padding: $base-padding 0;
+  &__title {
+    justify-self: center;
+    text-align: center;
+  }
+  .feature {
+    .layout {
+      display: grid;
+      text-align: center;
+      @include lg-min {
+        text-align: unset;
+        grid-template-columns: repeat(2, 50%) !important;
+      }
+    }
+    &__img {
+      display: flex;
+      padding-bottom: 21vw;
+      @include lg-min {
+        padding-bottom: 3vw;
+      }
+      img {
+        width: 100%;
+        align-self: center;
+      }
+      .left_shape {
+        position: absolute;
+        display: flex;
+        left: 0;
+        z-index: -1;
+        top: 36rem;
+        $base: 50vw;
+        .rectangle {
+          height: $base;
+          width: $base;
+          background-color: $soft-blue;
+        }
+        .circle {
+          height: $base;
+          width: $base;
+          position: absolute;
+          right: calc(-1 * $base / 2);
+          border-radius: 50%;
+          background-color: $soft-blue;
+        }
+        @include lg-min {
+          $base: 29vw;
+          top: unset;
+          bottom: 0;
+          .rectangle {
+            height: $base;
+            width: $base;
+            background-color: $soft-blue;
+          }
+          .circle {
+            height: $base;
+            width: $base;
+            position: absolute;
+            right: calc(-1 * $base / 2);
+            border-radius: 50%;
+            background-color: $soft-blue;
+          }
+        }
+      }
+    }
+    &__text {
+      @include lg-min {
+        padding-left: 7vw;
+      }
+      align-self: center;
+    }
+    .button {
+      @include lg-max {
+        display: none;
+      }
+    }
+  }
+}
+
+.home-section-3 {
+  padding: $base-padding 0;
+  .title {
+    justify-self: center;
+    text-align: center;
+  }
+  .download-extensions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    @include xl-min {
+      flex-flow: row;
+    }
+    .download-extension {
+      flex-basis: 16%;
+      display: grid;
+      padding: rem(21) 0;
+      height: fit-content;
+      justify-items: center;
+      text-align: center;
+      row-gap: 2.6rem;
+      border-radius: 0.9rem;
+      box-shadow: 0px 9px 9px rgba(0, 0, 0, 0.05);
+      @include xl-min {
+        &:nth-child(2) {
+          padding-top: 3vw;
+        }
+        &:nth-child(3) {
+          padding-top: 6vw;
+        }
+      }
+      &__text > p {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.home-section-4 {
+  padding: calc($base-padding * 3.4) 0;
+  .layout {
+    display: grid;
+    justify-items: center;
+    gap: rem(39);
+  }
+  &__header {
+    text-align: center;
+  }
+}
+
+.home-section-5 {
+  background-color: $soft-blue;
+  .layout {
+    display: grid;
+    padding: calc($base-padding * 1.8) 0;
+    gap: 1.6rem;
+    justify-items: center;
+    text-align: center;
+  }
+  .banner {
+    &__text {
+      text-transform: uppercase;
+      color: $white;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.3rem;
+    }
+    &__title {
+      color: $white;
+    }
+    &__form {
+      display: flex;
+      @include lg-max {
+        flex-flow: column;
+      }
+      justify-content: center;
+      gap: rem(18);
+      input {
+        border-radius: 0.5rem;
+        padding: 0 1.3rem;
+      }
+    }
+  }
+}

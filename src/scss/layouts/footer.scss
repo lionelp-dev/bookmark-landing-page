@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 @use "../utils" as *;
 
 .footer {
@@ -7,28 +7,36 @@
     display: grid;
     justify-content: center;
     text-align: center;
+    align-items: center;
     @include lg-min {
       display: flex;
       justify-content: space-between;
     }
-    align-items: center;
   }
   &__navigation {
     display: grid;
+    align-items: center;
     @include lg-min {
       display: flex;
     }
     gap: rem(66);
-    padding: rem(31) 0;
+    padding: rem(30) 0;
     ul {
+      gap: rem(45);
       display: grid;
       @include lg-min {
         display: flex;
       }
-      gap: rem(44);
-      list-style: none;
+      li {
+        align-self: center;
+        list-style: none;
+      }
       a {
+        line-height: 0;
         text-decoration: none;
+        &:hover {
+          color: $soft-red !important;
+        }
         &:visited {
           color: unset;
         }
@@ -38,7 +46,11 @@
 
   &__social {
     display: flex;
+    align-items: center;
     gap: rem(40);
+    svg:hover > path {
+      fill: $soft-red;
+    }
     a {
       @include lg-max {
         text-align: center;

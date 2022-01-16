@@ -1,0 +1,50 @@
+@use "../utils" as *;
+@use "../abstracts" as *;
+
+.nav-tabs {
+  display: grid;
+  justify-items: center;
+  &__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding-bottom: rem(60);
+    @include lg-min {
+      flex-direction: row;
+      transform: translateX(rem(-15));
+    }
+    a {
+      position: relative;
+      text-decoration: none;
+      padding: rem(30) rem(45);
+      @include lg-min {
+        padding: rem(38);
+      }
+      @include lg-max {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        &:first-child {
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+      &:hover {
+        color: $soft-red;
+      }
+      &[aria-selected="true"]:after {
+        content: "";
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        bottom: 0;
+        height: rem(5);
+        width: 34%;
+        border-radius: 3rem;
+        background-color: $soft-red;
+        @include lg-min {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

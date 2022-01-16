@@ -27,7 +27,7 @@ $breakpoints: (
 };
 @mixin lg-min{
     @media(min-width: map-get($breakpoints, "lg")){
-        @content    
+        @content     
     }
 };
 @mixin xl-min{

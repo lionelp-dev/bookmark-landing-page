@@ -1,41 +1,58 @@
-@use  "../utils" as *;
+@use "../utils" as *;
 @use "./colors" as *;
-
+@use "../abstracts/sizing.scss" as *;
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
 
 html {
   font-family: "Rubik", sans-serif;
-  color:  $gravish-blue;
+  color: $gravish-blue;
 }
 
-h1 {
-  padding-bottom: rem(27);
-  font-size: clamp(rem(21),rem(21) + 3vw,rem(39));
+$base: rem(18);
+
+$h1: clamp(calc($base * 1.8), 6vw, calc($base * 2.3));
+$h2: clamp(calc($base * 1.3), 5vw, calc($base * 1.5));
+$h3: clamp(calc($base * 1), 4vw, calc($base * 1.1));
+$p: clamp(calc($base * 0.9), 3vw, calc($base));
+$a: clamp(calc($base * 0.8), 2vw, calc($base * 0.9));
+$base-padding: clamp(rem(30), 3vw, rem(45));
+
+h1,
+.h1 {
+  font-size: $h1;
+  padding-bottom: calc($base-padding * 0.7);
   font-weight: 500;
   letter-spacing: -0.018rem;
-  color:  $very-dark-blue;
+  color: $very-dark-blue;
 }
 
-h2 {
-  padding-bottom: rem(27);
-  font-size: clamp(rem(18),rem(18) + 3vw,rem(26));
-  letter-spacing: -0.018rem;
-  color:  $very-dark-blue;
+h2,
+.h2 {
+  font-size: $h2;
+  padding-bottom: calc($base-padding * 0.4);
+  letter-spacing: -0.03rem;
+  font-weight: 500;
+  color: $very-dark-blue;
 }
-h3{
-  padding-bottom: rem(21);
-  font-size: clamp(rem(21),rem(21) + 3vw,rem(29));
+
+h3,
+.h3 {
+  font-size: $h3;
+  padding-bottom: calc($base-padding * 0.3);
   letter-spacing: -0.018rem;
-  color:  $very-dark-blue;
+  color: $very-dark-blue;
+  text-decoration: none;
 }
+
 p {
-  font-size: clamp(rem(11),rem(11) + 3vw,rem(18));
-  line-height: rem(28);
-  padding-bottom: rem(38);
+  font-size: $p;
+  padding-bottom:calc($base-padding * 0.9);
+  line-height: calc($base * 1.8);
 }
 
-a{
-  font-size: clamp(rem(11),rem(11) + 3vw,rem(14));
-  color:  $very-dark-blue;
+a,
+.a {
+  font-size: $a;
+  color: $very-dark-blue;
+  font-weight: 400;
 }
-

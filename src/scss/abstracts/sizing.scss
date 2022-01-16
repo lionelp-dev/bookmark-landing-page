@@ -1,4 +1,5 @@
-$width: (
+$base-padding: clamp(rem(15), 3vw, rem(45));
+$width: ( 
   "xs": 20rem,
   "sm": 23rem,
   "md": 26rem,

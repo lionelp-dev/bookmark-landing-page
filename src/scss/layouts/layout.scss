@@ -3,25 +3,22 @@
 
 .container {
   display: grid;
-  grid-template-columns: 1fr  min(88%, 1440px) 1fr;
-  @include lg-min{
-    grid-template-columns: 1fr  min(78%, 1440px) 1fr;
-  }
   width: 100%;
-} 
+  grid-template-columns: 1fr min(89%, 1440px) 1fr;
+  @include lg-min {
+    grid-template-columns: 1fr min(78%, 1440px) 1fr;
+  }
+}
 
 .layout {
   grid-column: 2/3;
   display: grid;
-  @include lg-max{
-      justify-items: center;
+  @include lg-max {
+    justify-items: center;
   }
 }
 
-.flex{
+.flex {
   display: flex;
   flex-wrap: wrap;
 }
-
-
-

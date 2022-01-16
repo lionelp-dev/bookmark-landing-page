@@ -1,0 +1,42 @@
+@use "../abstracts" as *;
+@use "../utils" as *;
+
+$base-padding: clamp(rem(15), 3vw, rem(45));
+
+.accordion {
+  width: 59vw;
+  &-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    &:first-child {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    &__title {
+      padding-top: calc($base-padding * 0.7);
+      a {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        &:hover {
+          color: $soft-red;
+        }
+        svg {
+          justify-self: end;
+        }
+        &[aria-expanded="true"] > svg {
+          transition: ease-in 320ms;
+          transform: rotate(180deg);
+          path {
+            stroke: $soft-red;
+          }
+        }
+        &[aria-expanded="false"] > svg {
+          transition: ease-in 190ms;
+          transform: rotate(0deg);
+        }
+      }
+    }
+    &__collapse {
+      padding-top: calc($base-padding * 0.4);
+    }
+  }
+}
